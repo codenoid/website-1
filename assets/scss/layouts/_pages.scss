@@ -1,0 +1,333 @@
+/*
+==========================================================================
+APP STYLES
+==========================================================================
+
+1.0 - General Page Styles
+
+*/
+
+.sc__hero {
+    position: absolute;
+    right: 0;
+    top: 10em;
+    z-index: 0;
+
+    @include bp(desktop) {
+        right: 15%;
+    }
+
+    @include bp(large) {
+        top: 15em;
+        right: 20%;
+    }
+
+    &--people {
+        img {
+            position: absolute;
+        }
+
+        &__customer { 
+            top: 20px;
+            right: 190px;
+            z-index: 10;
+            @include animate(1s, 2s, fadeInDown);
+        }
+
+        &__itamae {
+            top: -40px;
+            right: 120px;
+            z-index: 0;
+            @include animate(1s, 1.5s, fadeInDown);
+        }
+    }
+
+    .sc__hero--overlay {
+        position: absolute;
+        top: -10em; // offset hero
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($primary, .9);
+        z-index: 100;
+
+        @include bp(tablet) {
+            display: none;
+        }
+    }
+
+    .sc__hero--conveyor {
+        position: relative;
+        z-index: 5;
+        @include animate(1s, 2.5s, fadeInDown);
+
+        .maki {
+            position: absolute;
+            top: 90px;
+            right: 200px;
+            @include animate(1s, 3s, fadeInDown);
+
+            &--green, &--red {
+                position: absolute;
+                width: 35px;
+                height: 40px;
+            }
+
+            &--green {
+                background: url('#{$image-path}maki-green.svg') no-repeat center center / 100%;
+            }
+
+            &--red {
+                background: url('#{$image-path}maki-red.svg') no-repeat center center / 100%;
+            }
+        }
+    }
+}
+
+section {
+    span {
+        color: $text-color;
+        text-transform: uppercase;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 2em;
+            margin: .325em auto;
+            border: 2px solid $primary;
+            @include rounded;
+
+            @include bp(tablet) {
+                margin: .325em 0;
+            }
+        }
+    }
+
+    h1 {
+        margin-top: .325em;
+    }
+
+    &.sc__home {
+        position: relative;;
+        margin-top: 5em;
+        @include animate(1s, 3s, fadeInDown);
+        z-index: 200;
+        text-align: center;
+
+        @include bp(tablet) {
+            text-align: unset;
+        }
+
+        @include bp(giant) {
+            margin-top: 10em;
+        }
+
+        h1,span,p {
+            color: $light;
+            
+            @include bp(tablet) {
+                color: $dark;
+            }
+        }
+
+        p {
+            @include bp(tablet) {
+                color: $text-color;
+            }
+        }
+    }
+
+    &.sc__about {
+        position: relative;
+        margin-top: 5em;
+        background: $light;
+        padding: 2.5em 0;
+        z-index: 200;
+        text-align: center;
+
+        @include bp(tablet) {
+            background: unset;
+            text-align: unset;
+            padding: 0;
+        }
+    }
+
+    &.sc__features {
+        position: relative;
+        text-align: center;
+        padding: 2.5em 0;
+        background: $light-grey;
+
+        @include bp(tablet) {
+            background: unset;
+            padding: 0;
+        }
+
+        &:before {
+            @include bp(tablet) {
+                position: absolute;
+                left: -50%;
+                top: -700px;
+                content: "";
+                background: url('#{$image-path}shape-middle.svg') no-repeat center center / 100%;
+                width: 1600px;
+                height: 2720px;
+                z-index: 20;
+            }
+
+            @include bp(giant) {
+                width: 2200px;
+                height: 3800px;
+                top: -900px;
+                left: -70%;
+            }
+        }
+
+        .row {
+            position: relative;
+            z-index: 50;
+            padding: 2.5em 0;   
+
+            @include bp(tablet) {
+                padding-top: 10em;
+            }
+        }
+
+        span:after {
+            margin: .325em auto;
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align: left;
+            list-style: none;
+            margin: 0;
+
+            li {
+                position: relative;
+                padding-left: 60px;
+
+                @include bp(tablet) {
+                    width: 48%;
+                }
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 1.75em;
+                    display: inline-block;
+                    background: url('#{$image-path}maki-red.svg') no-repeat center center / 100%;
+                    width: 35px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+
+    &.sc__team {
+        position: relative;
+        text-align: center;
+
+        > .row {
+            position: relative;
+            padding-top: 5em;
+            z-index: 50;
+        }  
+
+        img {
+            max-width: 100%;
+        }
+
+        span:after {
+            margin: .325em auto;
+        }
+
+        .team__members {
+            text-align: center;
+            margin-top: 2.5em;
+
+            @include bp(tablet) {
+                text-align: left;
+            }
+
+            h3 {
+                margin-bottom: .325em;
+            }
+
+            span {
+                font-weight: 700;
+                font-size: 1.4rem;
+
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &.sc__contact {
+        position: relative;
+        margin: 5em 0;
+        text-align: center;
+        z-index: 100;
+
+        @include bp(tablet) {
+            margin: 5em 0 20em;
+        }
+
+        @include bp(giant) {
+            margin: 15em 0;
+        }
+
+        span:after {
+            margin: .325em auto;
+        }
+
+        ul.social {
+            list-style: none;
+            margin: 2.5em auto;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+            @include bp(tablet) {
+                width: 600px;
+            }
+
+            li {
+                width: 30%;
+
+                &.github:before, &.twitter:before {
+                    position: relative;
+                    top: 10px;
+                    content: "";
+                    display: block;
+                    margin-right: .625em;   
+                    width: 44px;
+                    height: 44px;
+                    text-align: center;
+                    margin: 1.25em auto;
+                }
+
+                &.github:before {
+                    background: url('#{$image-path}social-github.svg') no-repeat center center / 100%;
+                }
+
+                &.twitter:before {
+                    background: url('#{$image-path}social-twitter.svg') no-repeat center center / 100%;
+                }
+                
+                a {
+                    color: $dark;
+                    font-weight: 700;
+                    font-size: 2.2rem;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

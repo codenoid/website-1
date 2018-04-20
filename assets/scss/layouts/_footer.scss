@@ -1,0 +1,116 @@
+footer[role="contentinfo"] {
+    position: relative;
+    padding: 2.5em 0;
+    text-align: center;
+
+    @include bp(tablet) {
+        text-align:unset;
+    }
+
+    @include bp(giant) {
+        padding: 5em 0;
+    }
+
+    &:after {
+        position: absolute;
+        bottom: 0px;
+        right: 0;
+        content: "";
+        display: block;
+        width: 901px;
+        height: 250px;
+        background: url('#{$image-path}shape-footer.svg') no-repeat top center / 100%;
+        z-index: 0;
+
+        @include bp(tablet) {
+            height: 500px;
+        }
+
+        @include bp(giant) {
+            bottom: -10em;
+            width: 1200px;
+            height: 1000px;
+            right: -20%;
+        }
+    }
+
+    a, p {
+        position: relative;;
+        margin: 0;
+        font-family: $header-font-family;
+        font-size: 1.4rem;
+        color: $light;
+        z-index: 10;
+
+        @include bp(tablet) {
+            color: $text-color;
+        }
+    }
+
+	.site-by {
+        position: relative;
+        z-index: 200;
+        @include bp(tablet) {
+            text-align: right;
+        }
+
+        a, p {
+            color: $light;
+        }
+    }
+
+    ul.social {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            margin-right: .325em;
+
+            @include bp(medium) {
+                margin-right: .625em;
+            }
+
+            a {
+                display: block;
+                @include hide-text;
+            }
+
+            a:before {
+                display: block;
+                content: "";
+                width: 50px; height: 50px;
+            }
+
+            &.social--fb a:before {
+                background: url('../../assets/images/social-fb.svg') no-repeat;
+                background-size: 100%;
+            }
+
+            &.social--tw a:before {
+                background: url('../../assets/images/social-tw.svg') no-repeat;
+                background-size: 100%;
+            }
+
+            &.social--in a:before {
+                background: url('../../assets/images/social-in.svg') no-repeat;
+                background-size: 100%;
+            }
+
+            &.social--li a:before {
+                background: url('../../assets/images/social-li.svg') no-repeat;
+                background-size: 100%;
+            }
+
+            &.social--gp a:before {
+                background: url('../../assets/images/social-gp.svg') no-repeat;
+                background-size: 100%;
+            }
+
+            &.social--em a:before {
+                background: url('../../dist/images/social-em.svg') no-repeat;
+                background-size: 100%;
+            }
+        }
+    }
+}

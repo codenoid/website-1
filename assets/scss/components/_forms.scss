@@ -1,0 +1,70 @@
+// Custom Form Styles
+
+[type=color], [type=date], [type=datetime-local], [type=datetime], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=time], [type=url], [type=week], select {
+    height:$input-height;
+    width:100%;
+    background: $light;
+    border:1px solid $medium-grey;
+    @include rounded;
+    padding:10px;
+
+    &:hover {
+        border-color:darken($input-border-color, 20%);
+    }
+
+    &:focus {
+        border-color:$input-focus-border-color;
+        color:$input-focus-color;
+        outline:none;
+    }
+}
+
+textarea {
+    width: 100%;
+    background: $light;
+    border:1px solid $medium-grey;
+    @include rounded;
+    padding: 10px;
+}
+
+.gform_wrapper {
+    
+    ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-wrap: wrap;
+
+        li {
+            display: inline-block;
+            margin-bottom: .625em;
+            padding: 0;
+            
+            &:before {
+                display: none;
+            }
+        }
+    }
+}
+
+.half-width {
+    @include bp(tablet) {
+        display: inline-block;
+        width: 47%;
+        margin-right: 5%;
+
+        &:nth-child(even) {
+            margin-right: 0;
+        }
+    }
+} 
+
+.full-width {
+    display: inline-block;
+    width: 100%;
+}
+
+.gform_body {
+    margin-top: 2.5em;
+}

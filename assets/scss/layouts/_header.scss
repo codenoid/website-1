@@ -1,0 +1,53 @@
+header[role="banner"] {
+    position: relative;
+    margin-bottom: 5em;
+    padding: 1.25em .325em;
+
+    @include bp(desktop) {
+        padding: 2.5em 0;
+    }
+
+    @include bp(giant) {
+        padding: 5em 0 0;
+    }
+
+    &:after {
+        @include bp(tablet) {
+            position: absolute;
+            top: -1.25em; // offset header padding
+            right: 0;
+            content: "";
+            display: block;
+            width: 700px;
+            height:610px;
+            background: url('#{$image-path}shape-header.svg') no-repeat center center / cover;
+            z-index: 0;
+        }
+
+        @include bp(desktop) {
+            width: 901px;
+            height: 783px;
+        }
+
+        @include bp(giant) {
+            top: -5em;
+            width: 1400px;
+            height: 1200px;
+            right: -25%;
+        }
+    }
+
+    .row {
+        justify-content: space-between;
+    }
+
+    img {
+        position: relative;
+        @include animate(1s, 300ms, fadeInDown);
+        z-index: 200;
+
+        .mobile-menu-active & {
+            z-index: 999;
+        }
+    }
+}

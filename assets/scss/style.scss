@@ -1,0 +1,28 @@
+// Load Fonts
+@import url("https://use.typekit.net/swu8xqc.css");
+
+// Load Normalize
+@import "../../node_modules/normalize.css/normalize";
+
+// Load Node Modules
+@import "../../node_modules/slick-carousel/slick/slick";
+
+// Load settings
+@import "settings";
+@import "mixins";
+
+// Import common styles
+@import "common/grid";
+@import "common/global";
+@import "common/typography";
+@import "common/animations";
+
+// Import compnent styles
+@import "components/buttons";
+@import "components/lists";
+
+// Import layout styles
+@import "layouts/header";
+@import "layouts/navigation";
+@import "layouts/footer";
+@import "layouts/pages";

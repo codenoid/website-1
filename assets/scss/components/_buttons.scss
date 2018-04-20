@@ -1,0 +1,35 @@
+// Custom Button Styles
+
+.button {
+    display: inline-block;
+    margin: .625em 0;
+    background: $primary;
+    color: $light;
+    font-size: 2rem;
+    line-height: 2.6;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: .625em 1.25em;
+    font-family: $header-font-family;
+    border: none;
+    border-radius: 12em;
+    transition: 600ms $cubic;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        background: $tertiary;
+        color: $light;
+    }
+
+    &:before {
+        display: inline-block;
+        position: relative;
+        top: 6px;
+        content: "";
+        margin-right: .625em;
+        background: url('#{$image-path}social-slack.svg') no-repeat center center / 100%;
+        width: 30px;
+        height: 30px;
+    }
+}
